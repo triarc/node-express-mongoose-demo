@@ -4,6 +4,7 @@
 
 ```
 npm install gulp -g
+npm install mocha -g
 npm install
 ```
 
