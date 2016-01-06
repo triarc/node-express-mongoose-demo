@@ -5,6 +5,6 @@
   "logo": "https://node-js-sample.herokuapp.com/node.png",
   "addons": [
   	"mongolab:sandbox"
-  ]
+  ],
   "keywords": ["node", "express", "mongoose"]
 }
