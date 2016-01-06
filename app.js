@@ -8,7 +8,13 @@ var todo = require('./routes/todo');
 
 var app = express();
 
-mongoose.connect(process.env.MONGOLAB_URI || config.get('mongodb'));
+var werker
+
+var mongodbUri = process.env.MONGOLAB_URI || 
+	(process.env.MONGO_PORT_27017_TCP_ADDR ? 'mongodb://' + process.env.MONGO_PORT_27017_TCP_ADDR + process.env.MONGO_PORT_27017_TCP_PORT : null) ||
+	config.get('mongodb');
+
+mongoose.connect(mongodbUri);
 mongoose.Promise = require('bluebird');
 
 /* middlewares */
