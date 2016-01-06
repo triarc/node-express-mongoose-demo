@@ -11,7 +11,7 @@ var app = express();
 var werker
 
 var mongodbUri = process.env.MONGOLAB_URI || 
-	(process.env.MONGO_PORT_27017_TCP_ADDR ? 'mongodb://' + process.env.MONGO_PORT_27017_TCP_ADDR + process.env.MONGO_PORT_27017_TCP_PORT : null) ||
+	(process.env.MONGO_PORT_27017_TCP_ADDR ? 'mongodb://' + process.env.MONGO_PORT_27017_TCP_ADDR + ':' + process.env.MONGO_PORT_27017_TCP_PORT : null) ||
 	config.get('mongodb');
 
 mongoose.connect(mongodbUri);
